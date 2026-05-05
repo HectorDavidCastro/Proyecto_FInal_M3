@@ -6,6 +6,7 @@ import { HomePage } from './pages/HomePage'
 import { LogInPage } from './pages/LogInPage'
 import { RecetasPage } from './pages/RecetasPage'
 import { Guaradadaspage } from './pages/Guaradadaspage'
+import { Receta } from './components/Receta'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/LogIn" element={<LogInPage/>}/>
           <Route path="/Recetas" element={<RecetasPage/>}/>
+          <Route path="/Receta/:id" element={<Receta/>}/>
           <Route path="/RecetasGuardadas" element={<Guaradadaspage/>}/>
         </Routes>
       </main>

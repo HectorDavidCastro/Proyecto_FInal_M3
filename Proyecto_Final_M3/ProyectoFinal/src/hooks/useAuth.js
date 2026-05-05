@@ -1,11 +1,13 @@
 import {useState} from "react"
 export const useAuth= ()=>{
-    const [ auth, setAuth]= useState(false)
-    const logIn=()=>{
-        setAuth(true)
-    }
+    const[usuario, setUsuario]=useState(null);
+
+    const logIn=(nombre)=>{
+        setUsuario(nombre)
+    };
     const logOut=()=>{
-        setAuth(false)
+        setUsuario(null);
     }
-    return {auth, logIn, logOut}
+
+return { usuario, logIn, logOut}
 }

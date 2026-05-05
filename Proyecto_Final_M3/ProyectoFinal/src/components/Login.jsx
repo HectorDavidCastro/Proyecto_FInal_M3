@@ -3,18 +3,18 @@ import { useAuth } from "../hooks/useAuth"
 import { useForm } from "react-hook-form"
 
 export const Login = () => {
-    const{auth, logIn, logOut }=useAuth();
+    const{usuario, logIn, logOut}=useAuth();
     const{register, handleSubmit, formState: {errors}, watch}= useForm({});
 
     const onSubmit=(e)=>{
-        e.preventDefault();
+        e.preventDefault;
     }
     
     const contraseña= watch("contraseña");
-    const nombre= watch("nombre");
+    const nombreUsuario= watch("nombre");
   return (
     <div>
-        { (!auth) ?
+        { (!usuario) ?
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
@@ -44,13 +44,13 @@ export const Login = () => {
               })} />
               {errors.confirmarContraseña && <p>{errors.confirmarContraseña.message}</p>}  
             </div>
-            <button type='submit' onClick={logIn}>Registrarse</button>  
+            <button type='submit' onClick={()=>logIn(nombreUsuario)}>Registrarse</button>  
           </form>        
       </div>
          : 
          <div>
             <h2>Usted ya se encuetra registrado</h2>
-            <h3>su usuario es : {nombre}</h3>
+            <h3>su usuario es : {usuario}</h3>
             <h3>¿Quiere cerrar la sesion?</h3>
             <button onClick={logOut}>Cerrar sesion</button>
         </div>
